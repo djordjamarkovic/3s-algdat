@@ -16,23 +16,23 @@ public class Werft {
         dieSchiffe = new ArrayList<Schiff>();
     }
 
-    public void betriebFuerEinenMonat() {
+    public void betriebFuerEinenMonat() throws Exception, KonkursException {
         schadhafteSchiffenSinken();
         schiffeFahrenHerumUndMachenGewinn();
         zustandDerWerftAnzeigen();
     }
 
-    private void zustandDerWerftAnzeigen() {
+    public void zustandDerWerftAnzeigen() {
         dieKassa.anzeigen();
         for (Schiff x : dieSchiffe) {
             x.anzeigen();
         }
     }
 
-    private void schiffeFahrenHerumUndMachenGewinn() {
+    private void schiffeFahrenHerumUndMachenGewinn() throws Exception {
         for (Schiff x : dieSchiffe) {
             dieKassa.einnehmen(x.monatsGewinn());
-            x.schiffsHausAltert();
+            x.schiffsHautAltert();
         }
     }
 
@@ -45,6 +45,7 @@ public class Werft {
         }
         for (Schiff x : schadhafteSchiffe) {
             // Schiff sinkt
+            // todo
             dieKassa.ausgeben(x.preis() * Definitions.BERGEKOSTEN_FAKTOR);
             dieSchiffe.remove(x);
         }
@@ -52,10 +53,18 @@ public class Werft {
 
     public void bezahlen(double preis) throws KonkursException {
         dieKassa.ausgeben(preis);
-
     }
 
     public void aufnehmen(Schiff x) {
         dieSchiffe.add(x);
     }
+
+    public void verschrotten(int shipNumber) {
+        //todo
+        dieSchiffe.remove(shipNumber);
+    }
+    public String getShips() {
+        return  dieSchiffe.toString();
+    }
+
 }

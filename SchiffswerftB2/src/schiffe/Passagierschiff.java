@@ -12,4 +12,14 @@ public class Passagierschiff extends Schiff {
     protected String schiffsArt() {
         return "Passagierschiff";
     }
+
+    @Override
+    public double monatsGewinn() {
+        return Definitions.PASSAGIERSCHIFF_MONTHLY_PROFIT;
+    }
+
+    @Override
+    public double repaint() {
+        return Definitions.PASSAGIERSCHIFF_REPAINT;
+    }
 }

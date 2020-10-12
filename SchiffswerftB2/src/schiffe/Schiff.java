@@ -1,5 +1,6 @@
 package schiffe;
 
+import definitions.Definitions;
 import inout.InOut;
 
 public abstract class Schiff {
@@ -36,7 +37,6 @@ public abstract class Schiff {
 
     protected abstract String schiffsArt();
 
-
     private int schiffsNummer() {
         return dieSchiffsNummer;
     }
@@ -44,5 +44,13 @@ public abstract class Schiff {
     public boolean istSchadhaft() {
         //TODO
         return false;
+    }
+
+    abstract public double monatsGewinn();
+
+    abstract public double repaint();
+
+    public double schiffsHautAltert() {
+        return derHautzustand = derHautzustand * Definitions.ROSTFAKTOR;
     }
 }

@@ -2,30 +2,25 @@ package schiffe;
 
 import definitions.Definitions;
 
-public class Tankschiff extends Schiff {
-
-    public Tankschiff() {
-    }
-
+public class Frachtschiff extends Schiff {
     @Override
     public double preis() {
-        return Definitions.TANKSCHIFF_PREIS;
+        return Definitions.FRACHTSCHIFF_PREIS;
     }
 
     @Override
     protected String schiffsArt() {
-        return "Tankschiff";
+        return "Frachtschiff";
     }
 
     @Override
     public double monatsGewinn() {
-        return Definitions.TANKSCHIFF_MONTHLY_PROFIT;
+        return Definitions.FRACHTSCHHIFF_MONTHLY_PROFIT;
     }
 
     @Override
     public double repaint() {
-        return Definitions.TANKSCHIFF_REPAINT;
+        return Definitions.FRACHTSCHHIFF_REPAINT;
     }
-
 
 }
