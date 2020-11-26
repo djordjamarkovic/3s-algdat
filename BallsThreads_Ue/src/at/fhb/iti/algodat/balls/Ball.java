@@ -8,24 +8,39 @@ public class Ball extends BasicBall implements Runnable {
 
 	private BallRectangle theRectangle;
 	private Thread theThread;
+	private boolean shallRun;
 
 	public Ball(BallsPanel ballsPanel, BallRectangle br) {
 		super(ballsPanel);
 		theRectangle = br;
+		shallRun=true;
 
-		// TODO Make the balls fly
-
+		theThread = new Thread(this);
+		theThread.start();
 	}
 
 	public void run() {
-		// TODO rework run()
-		while ( true ) {
-			delay(); move();
+		while ( shallRun ) {
+			// fliege auserhalb vom Rechteck
+			while(!this.isTouching(theRectangle) && shallRun) {
+				delay(); move();
+			}
+			// Berechtigung feur Rechteck nehmen
+			theRectangle.occupy();
+
+			//fliege innerhalb vom Rechteck
+			while(this.isTouching(theRectangle) && shallRun) {
+				delay(); move();
+			}
+			// Berechtigung fuer Rechteck zurueckgeben
+			theRectangle.free();
+
+// 			delay(); move();
 		}
 	}
 
 	public void stop() {
-		// TODO stop()
+		shallRun = false;
 	}
 
 	private void delay() {
