@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="8701026c-1e15-4e31-b148-2a9ad9cbe582" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="8701026c-1e15-4e31-b148-2a9ad9cbe582" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+>>>>>>> 62f469ac213470eb7eb7529cb3de58248b9d955f
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +43,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+<<<<<<< HEAD
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -43,6 +51,13 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="Errors" />
+=======
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+>>>>>>> 62f469ac213470eb7eb7529cb3de58248b9d955f
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -78,6 +93,7 @@
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -94,5 +110,12 @@
       <screen x="0" y="25" width="2030" height="1121" />
     </state>
     <state x="504" y="223" width="1034" height="839" key="SettingsEditor/0.25.2030.1121@0.25.2030.1121" timestamp="1606412493929" />
+=======
+  <component name="WindowStateProjectService">
+    <state x="208" y="41" key="SettingsEditor" timestamp="1606412676373">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="208" y="41" key="SettingsEditor/0.25.1440.875/-1227.-2135.3840.2135@0.25.1440.875" timestamp="1606412676373" />
+>>>>>>> 62f469ac213470eb7eb7529cb3de58248b9d955f
   </component>
 </project>
