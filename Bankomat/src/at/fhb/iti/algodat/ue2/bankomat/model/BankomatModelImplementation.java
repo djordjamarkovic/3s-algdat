@@ -1,7 +1,6 @@
 package at.fhb.iti.algodat.ue2.bankomat.model;
 
 import at.fhb.iti.algodat.ue2.bankomat.grafics.BankomatView;
-
 import static at.fhb.iti.algodat.ue2.bankomat.model.BankomatState.*;
 
 public class BankomatModelImplementation implements BankomatModel {
