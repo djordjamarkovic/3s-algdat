@@ -24,7 +24,7 @@ public class Kassa {
 
     public void einnehmen(double profit) throws Exception {
         if (profit < 0.0) {
-            throw new Exception("Profit: "+profit+" is negativ." );
+            throw new Exception("Profit: " + profit + " is negativ.");
         }
         kassaStand = kassaStand + profit;
     }

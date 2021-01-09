@@ -64,7 +64,7 @@ public class Werft {
 
         while (iterator.hasNext()) {
             Schiff x = iterator.next();
-            System.out.println("DieSchiffsNummer: "+x.dieSchiffsNummer);
+            System.out.println("DieSchiffsNummer: " + x.dieSchiffsNummer);
 
             if (x.dieSchiffsNummer == shipNumber) {
                 iterator.remove();
@@ -81,7 +81,7 @@ public class Werft {
 
         while (iterator.hasNext()) {
             Schiff x = iterator.next();
-            System.out.println("DieSchiffsNummer: "+x.dieSchiffsNummer);
+            System.out.println("DieSchiffsNummer: " + x.dieSchiffsNummer);
 
             if (x.dieSchiffsNummer == repaintNumber) {
                 x.lackiereSchiff(x);

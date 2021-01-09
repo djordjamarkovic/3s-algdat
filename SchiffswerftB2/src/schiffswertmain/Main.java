@@ -12,7 +12,12 @@ import werft.Werft;
 
 public class Main {
 
+
     public static void main(String[] args) {
+        run();
+    }
+
+    public static void run() {
 
         Werft dieWerft = new Werft();
 
@@ -24,9 +29,9 @@ public class Main {
                 dieWerft.betriebFuerEinenMonat();
                 // User-Aktion auswaehlen
                 choice = InOut.readMenu("Was wollen Sie tun",
-                        "Tankschiff bauen ("+ Definitions.TANKSCHIFF_PREIS +" Mio. EUR)@" // 1
-                                + "Passagierschiff bauen ("+ Definitions.PASSAGIERSCHIFF_PREIS +" Mio. EUR)@" // 2
-                                + "Frachtschiff bauen ("+ Definitions.FRACHTSCHIFF_PREIS +" Mio. EUR)@" // 3
+                        "Tankschiff bauen (" + Definitions.TANKSCHIFF_PREIS + " Mio. EUR)@" // 1
+                                + "Passagierschiff bauen (" + Definitions.PASSAGIERSCHIFF_PREIS + " Mio. EUR)@" // 2
+                                + "Frachtschiff bauen (" + Definitions.FRACHTSCHIFF_PREIS + " Mio. EUR)@" // 3
                                 + "Schiff verschrotten@" // 4
                                 + "Schiff streichen@" // 5
                                 + "nichts tun@" // 6
@@ -35,7 +40,7 @@ public class Main {
 
                 // User-Aktion durchhführen
                 // int shipNumber;
-                //int repaintNumber;
+                // int repaintNumber;
                 switch (choice) {
                     case 1: { // Tankschiff bauen
                         Schiff x = new Tankschiff();
@@ -56,19 +61,15 @@ public class Main {
                         break;
                     }
                     case 4: { // Schiff verschrotten
-                        //dieWerft.zustandDerWerftAnzeigen();
                         int shipNumber = InOut.readInt("Welches Schiff wollen Sie verschrotten? Please choose: ");
-                        System.out.println("Gewaehlte Schiffsnummer: "+shipNumber);
+                        System.out.println("Gewaehlte Schiffsnummer: " + shipNumber);
                         dieWerft.verschrotten(shipNumber);
-                        //dieWerft.zustandDerWerftAnzeigen();
                         break;
                     }
                     case 5:
-                        //dieWerft.zustandDerWerftAnzeigen();
                         int repaintNumber = InOut.readInt("Welches Schiff wollen Sie neu lackieren? Please choose: ");
-                        System.out.println("Gewaehlte Schiffsnummer: "+repaintNumber);
+                        System.out.println("Gewaehlte Schiffsnummer: " + repaintNumber);
                         dieWerft.lackiereSchiff(repaintNumber);
-                        //dieWerft.zustandDerWerftAnzeigen();
                         break;
                     case 6: // nichts tun
                         break;
