@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="BallsThreads_Ue:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BallsThreads_Ue_jar</output-path>
+    <root id="archive" name="BallsThreads_Ue.jar">
+      <element id="module-output" name="BallsThreads_Ue" />
+      <element id="module-source" name="BallsThreads_Ue" />
+    </root>
+  </artifact>
+</component>
