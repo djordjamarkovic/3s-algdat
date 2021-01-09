@@ -4,6 +4,7 @@ import definitions.Definitions;
 import schiffe.Schiff;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Werft {
@@ -45,7 +46,6 @@ public class Werft {
         }
         for (Schiff x : schadhafteSchiffe) {
             // Schiff sinkt
-            // todo
             dieKassa.ausgeben(x.preis() * Definitions.BERGEKOSTEN_FAKTOR);
             dieSchiffe.remove(x);
         }
@@ -59,11 +59,42 @@ public class Werft {
         dieSchiffe.add(x);
     }
 
-    public void verschrotten(int shipNumber) {
-        //todo
-        dieSchiffe.remove(shipNumber);
+    public void verschrotten(int shipNumber) throws KonkursException {
+        Iterator<Schiff> iterator = dieSchiffe.iterator();
+
+        while (iterator.hasNext()) {
+            Schiff x = iterator.next();
+            System.out.println("DieSchiffsNummer: "+x.dieSchiffsNummer);
+
+            if (x.dieSchiffsNummer == shipNumber) {
+                iterator.remove();
+            }
+
+            System.out.println("Verschrottungspreis: " + Definitions.VERSCHROTTUNGS_FAKTOR * x.preis());
+            dieKassa.ausgeben(Definitions.VERSCHROTTUNGS_FAKTOR * x.preis());
+            break;
+        }
     }
+
+    public void lackiereSchiff(int repaintNumber) throws KonkursException {
+        Iterator<Schiff> iterator = dieSchiffe.iterator();
+
+        while (iterator.hasNext()) {
+            Schiff x = iterator.next();
+            System.out.println("DieSchiffsNummer: "+x.dieSchiffsNummer);
+
+            if (x.dieSchiffsNummer == repaintNumber) {
+                x.lackiereSchiff(x);
+            }
+            System.out.println("Lackierungspreis: " + x.repaintCost() + " Mio. Euro");
+            dieKassa.ausgeben(x.repaintCost());
+            break;
+        }
+    }
+
+    //NOTE obsolet
     public String getShips() {
-        return  dieSchiffe.toString();
+        return dieSchiffe.toString();
     }
+
 }

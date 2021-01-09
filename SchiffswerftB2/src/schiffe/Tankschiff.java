@@ -23,7 +23,7 @@ public class Tankschiff extends Schiff {
     }
 
     @Override
-    public double repaint() {
+    public double repaintCost() {
         return Definitions.TANKSCHIFF_REPAINT;
     }
 

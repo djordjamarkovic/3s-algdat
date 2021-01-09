@@ -6,9 +6,9 @@ import inout.InOut;
 public abstract class Schiff {
 
     private static int naechsteFreieSchiffsNummer = 1;
-    private int dieSchiffsNummer;
     private double derHautzustand;
     private int dieStreichZahl;
+    public int dieSchiffsNummer;
 
     public Schiff() {
         dieSchiffsNummer = naechsteFreieSchiffsNummer;
@@ -27,6 +27,10 @@ public abstract class Schiff {
         );
     }
 
+    public void setDerHautzustand(double derHautzustand) {
+        this.derHautzustand = derHautzustand;
+    }
+
     private int streichZahl() {
         return dieStreichZahl;
     }
@@ -42,15 +46,26 @@ public abstract class Schiff {
     }
 
     public boolean istSchadhaft() {
-        //TODO
-        return false;
+        if (derHautzustand < Definitions.SINKFAKTOR) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     abstract public double monatsGewinn();
 
-    abstract public double repaint();
+    abstract public double repaintCost();
 
     public double schiffsHautAltert() {
         return derHautzustand = derHautzustand * Definitions.ROSTFAKTOR;
+    }
+
+    public void lackiereSchiff(Schiff x) {
+        dieStreichZahl++;
+        derHautzustand = 1 - x.dieStreichZahl * Definitions.STREICHVORGAENGE_FAKTOR;
+
+        System.out.println("dieStreichZahl: "+dieStreichZahl);
+        System.out.println("derHautzustand: "+derHautzustand);
     }
 }

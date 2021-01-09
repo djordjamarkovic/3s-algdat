@@ -19,7 +19,7 @@ public class Passagierschiff extends Schiff {
     }
 
     @Override
-    public double repaint() {
+    public double repaintCost() {
         return Definitions.PASSAGIERSCHIFF_REPAINT;
     }
 }
