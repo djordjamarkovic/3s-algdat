@@ -23,4 +23,6 @@ public class Definitions {
     public static final double BERGEKOSTEN_FAKTOR = 5.0;
     public static final double VERSCHROTTUNGS_FAKTOR = 0.10;
 
+    public static final double STREICHVORGAENGE_FAKTOR = 0.05;
+
 }
