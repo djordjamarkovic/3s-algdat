@@ -3,6 +3,9 @@ package schiffe;
 import definitions.Definitions;
 import inout.InOut;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public abstract class Schiff {
 
     private static int naechsteFreieSchiffsNummer = 1;
@@ -20,9 +23,10 @@ public abstract class Schiff {
     abstract public double preis();
 
     public void anzeigen() {
+        NumberFormat formatter = new DecimalFormat("#0.00%");
         InOut.printString("Schiffnummer: " + schiffsNummer()
                 + " ist ein " + schiffsArt()
-                + " Schiffshaut ist " + hautZustand() + " intakt"
+                + " Schiffshaut ist " + formatter.format(hautZustand()) + " intakt"
                 + " wurde schon " + streichZahl() + " gestrichen."
         );
     }
@@ -35,9 +39,7 @@ public abstract class Schiff {
         return dieStreichZahl;
     }
 
-    private double hautZustand() {
-        return derHautzustand;
-    }
+    private double hautZustand() { return derHautzustand; }
 
     protected abstract String schiffsArt();
 

@@ -3,6 +3,9 @@ package werft;
 import definitions.Definitions;
 import inout.InOut;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class Kassa {
 
     private double kassaStand;
@@ -19,7 +22,8 @@ public class Kassa {
     }
 
     public void anzeigen() {
-        InOut.printString("Kassastand ist " + kassaStand + " Mio. EUR.");
+        NumberFormat formatter = new DecimalFormat("#0.00");
+        InOut.printString("Kassastand ist " + formatter.format(kassaStand) + " Mio. EUR.");
     }
 
     public void einnehmen(double profit) throws Exception {
