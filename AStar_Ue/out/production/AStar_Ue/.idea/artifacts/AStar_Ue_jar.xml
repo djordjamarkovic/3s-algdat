@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="AStar_Ue:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AStar_Ue_jar</output-path>
+    <root id="archive" name="AStar_Ue.jar">
+      <element id="module-output" name="AStar_Ue" />
+      <element id="module-source" name="AStar_Ue" />
+    </root>
+  </artifact>
+</component>

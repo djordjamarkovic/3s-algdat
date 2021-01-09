@@ -25,7 +25,6 @@ public class Main {
 
 		bm.add(new Ball(ba.getBallsPanel(),br));
 		bm.add(new Ball(ba.getBallsPanel(),br));
-		// TODO note
 		bm.add(new Ball(ba.getBallsPanel(),br));
 
 	}
