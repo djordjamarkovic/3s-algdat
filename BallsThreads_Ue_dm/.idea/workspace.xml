@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="BallsThreads_Ue:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,15 +24,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8701026c-1e15-4e31-b148-2a9ad9cbe582" name="Default Changelist" comment="">
+    <list default="true" id="8701026c-1e15-4e31-b148-2a9ad9cbe582" name="Default Changelist" comment="BallsThreads">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/balls/BallsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/balls/BallsModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/balls/BasicBall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/balls/BasicBall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/balls/BasicBallRectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/balls/BasicBallRectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/defs/Definitions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/defs/Definitions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/grafics/BallApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/grafics/BallApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/grafics/BallsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/grafics/BallsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/grafics/BallsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BallsThreads_Ue/at/fhb/iti/algodat/balls/grafics/BallsPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +41,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -82,6 +81,21 @@
       <option name="presentableId" value="Default" />
       <updated>1574979301459</updated>
     </task>
+    <task id="LOCAL-00001" summary="BallsThreads">
+      <created>1610208031013</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610208031013</updated>
+    </task>
+    <task id="LOCAL-00002" summary="BallsThreads">
+      <created>1610208068814</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1610208068814</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -95,6 +109,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="BallsThreads" />
+    <option name="LAST_COMMIT_MESSAGE" value="BallsThreads" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
