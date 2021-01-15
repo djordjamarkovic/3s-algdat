@@ -26,7 +26,6 @@ public class BankomatModelImplementation implements BankomatModel {
                 theCode += digit;
                 theView.setText("Bitte geben Sie Ihren Code ein: *");
                 System.out.println("Edge 2 from " + theState + " to " + target);
-                System.out.println("Code ist: " + theCode);
                 theState = target;
                 break;
             case DIGIT1:
@@ -34,7 +33,6 @@ public class BankomatModelImplementation implements BankomatModel {
                 theCode = theCode * 10 + digit;
                 theView.setText("Bitte geben Sie Ihren Code ein: **");
                 System.out.println("Edge 3 from " + theState + " to " + target);
-                System.out.println("Code ist: " + theCode);
                 theState = target;
                 break;
             case DIGIT2:
@@ -42,15 +40,13 @@ public class BankomatModelImplementation implements BankomatModel {
                 theCode = theCode * 10 + digit;
                 theView.setText("Bitte geben Sie Ihren Code ein: ***");
                 System.out.println("Edge 4 from " + theState + " to " + target);
-                System.out.println("Code ist: " + theCode);
                 theState = target;
                 break;
             case DIGIT3:
                 target = ENTER;
                 theCode = theCode * 10 + digit;
-                theView.setText("Bitte geben Sie Ihren Code ein: ****");
+                theView.setText("Bitte geben Sie Ihren Code ein: ****. Mit ENTER bestaetigen.");
                 System.out.println("Edge 5 from " + theState + " to " + target);
-                System.out.println("Code ist: " + theCode);
                 theState = target;
                 break;
             case CORRECT:
@@ -59,24 +55,24 @@ public class BankomatModelImplementation implements BankomatModel {
                 System.out.println("Edge 23 from " + theState + " to " + target);
                 break;
             default:
+                theView.setText("Bitte legen Sie eine Karte ein.");
                 break;
         }
     }
 
     public void pressButtonCancel() {
-        //theView.setText("Cancel pressed.");
         theView.setText("Bitte geben Sie Ihren Code ein: ");
         BankomatState target = START;
         theCode = 0;
         switch (theState) {
             case DIGIT0:
-                System.out.println("Edge ??? from " + theState + " to " + target);
+                System.out.println("Edge 26 from " + theState + " to " + target);
                 break;
             case DIGIT1:
-                System.out.println("Edge 10 from " + theState + " to " + target);
+                System.out.println("Edge 8 from " + theState + " to " + target);
                 break;
             case DIGIT2:
-                System.out.println("Edge 8 from " + theState + " to " + target);
+                System.out.println("Edge 10 from " + theState + " to " + target);
                 break;
             case DIGIT3:
                 System.out.println("Edge 12 from " + theState + " to " + target);
@@ -87,7 +83,11 @@ public class BankomatModelImplementation implements BankomatModel {
             case WAITING:
                 System.out.println("Edge 18 from " + theState + " to " + target);
                 break;
+            case CORRECT:
+                System.out.println("Edge 19 from " + theState + " to " + target);
+                break;
             default:
+                theView.setText("Cancel pressed.");
                 break;
         }
         theState = target;
@@ -95,7 +95,6 @@ public class BankomatModelImplementation implements BankomatModel {
     }
 
     public void pressButtonDelete() {
-        theView.setText("Delete pressed.");
         BankomatState target;
         switch (theState) {
             case DIGIT0:
@@ -149,49 +148,58 @@ public class BankomatModelImplementation implements BankomatModel {
                 target = CORRECT;
                 theView.setText("Bitte geben Sie Ihren Code ein: ****");
                 System.out.println("Edge 24 from " + theState + " to " + target);
+                theState = target;
                 break;
             default:
+                theView.setText("Delete pressed.");
                 break;
         }
     }
 
     public void pressButtonEnter() {
-        theView.setText("Enter pressed.");
         switch (theState) {
             case ENTER:
                 BankomatState target;
-                if (theCode == CORRECT_CODE) {
+                if (isCodeCorrect(theCode)) {
                     target = WAITING;
-                    theView.setText("Ihr Code ist korrekt. Geld mit ENTER abheben? ");
-                    System.out.println("Edge 17 from " + theState + " to " + target);
+                    theView.setText("Ihr Code ist korrekt. Weiter mit ENTER.");
+                    System.out.println("Edge 16 from " + theState + " to " + target);
                     theState = target;
                     break;
-                } else if (theCode != CORRECT_CODE) {
+                } else if (!isCodeCorrect(theCode)) {
                     target = DIGIT0;
                     theView.setText("Ihr Code ist nicht korrekt. Bitte wiederholen:");
-                    System.out.println("Edge 16 from " + theState + " to " + target);
+                    System.out.println("Edge 17 from " + theState + " to " + target);
                     theState = target;
                     break;
                 }
                 break;
             case WAITING:
                 target = CORRECT;
-                theView.setText("Karte rausschieben.");
+                theView.setText("Geld abheben? Weiter mit ENTER.");
                 System.out.println("Edge 22 from " + theState + " to " + target);
                 theState = target;
                 break;
             case CORRECT:
-                target = MONEYBOX;
-                theView.setText("Geld in die Geldlade legen.");
+                target = CARDSLOT;
+                theView.setText("Karte rausschieben (3PIEPS). Weiter mit Karte entfernen.");
                 System.out.println("Edge 25 from " + theState + " to " + target);
+
+                theView.setText("Bitte Ihre Karte entfernen.");
+                theView.setKartenButtonLabel("Karte entfernen");
+
                 theState = target;
                 break;
-            case MONEYBOX:
-                target = MONEY;
-                theView.setText("Geld aus Geldlade nehmen. BIPS BIBPS BIPS");
-                System.out.println("Edge 26 from " + theState + " to " + target);
-                theState = target;
+            default:
+                theView.setText("Enter pressed.");
                 break;
+        }
+    }
+
+    public void pressButtonMoney() {
+        theView.setGeldladeText("Geldlade ist leer.");
+        BankomatState target;
+        switch (theState) {
             case MONEY:
                 target = START;
                 theView.setText("Auf Wiedersehen!");
@@ -199,76 +207,51 @@ public class BankomatModelImplementation implements BankomatModel {
                 theState = target;
                 break;
             default:
+                theView.setText("Money pressed.");
                 break;
         }
     }
 
-    public void pressButtonMoney() {
-        theView.setText("Money pressed.");
-        theView.setGeldladeText("Geldlade neuer Text");
-    }
-
     public void pressButtonCard() {
-        theView.setText("Karte einlegen gedrückt.");
-        theView.setKartenButtonLabel("Kartenschacht belegt");
-        theView.setKartenText("Kartenschacht belegt.");
-
         switch (theState) {
             case START: {
                 BankomatState target = DIGIT0;
-                // TODO semantic
-
                 System.out.println("Edge 1 from " + theState + " to " + target);
+                theView.setText("Karte einlegen gedrückt. Bitte Code eingeben!");
+                theView.setKartenButtonLabel("Kartenschacht belegt");
+                theView.setKartenText("Kartenschacht belegt.");
                 theState = target;
+                break;
             }
-            break;
-            case DIGIT0: {
-                BankomatState target = DIGIT1;
-                System.out.println("Edge 2 from " + theState + " to " + target);
+            case CARDSLOT: {
+                BankomatState target = MONEY;
+                System.out.println("Edge 15 from " + theState + " to " + target);
+                theView.setText("Geld in Geldlade legen. Weiter mit \"Geld entnehmen\".");
+                theView.setKartenText("Kartenschacht frei.");
+                theView.setKartenButtonLabel("Karte einlegen");
+                theView.setGeldladeText("Geldlade ist voll.");
                 theState = target;
+                break;
             }
-            break;
-            case DIGIT1: {
-                BankomatState target = DIGIT2;
-                System.out.println("Edge 3 from " + theState + " to " + target);
-                theState = target;
-            }
-            break;
-            case DIGIT2: {
-                BankomatState target = DIGIT3;
-                System.out.println("Edge 4 from " + theState + " to " + target);
-                theState = target;
-            }
-            break;
-            case DIGIT3: {
-                BankomatState target = ENTER;
-                System.out.println("Edge 5 from " + theState + " to " + target);
-                theState = target;
-            }
-            break;
-            case ENTER: {
-                boolean code = true;
-                if (code) {
-                    BankomatState target = WAITING;
-                    System.out.println("Edge 1 from " + theState + " to " + target);
-                    theState = target;
-                } else if (!code) {
-                    BankomatState target = DIGIT0;
-                    System.out.println("Edge 1 from " + theState + " to " + target);
-                    theState = target;
-                }
-            }
-            break;
         }
     }
 
+    public boolean isCodeCorrect(int i) {
+        boolean result = false;
+        if (i == CORRECT_CODE) {
+            result = true;
+        } else if (i != CORRECT_CODE) {
+            result = false;
+        }
+        return result;
+    }
+
+    /* obsolet
     private String getEdge(Enum<BankomatState> enm) {
-		/*
 		BankomatState target = enm;
 		System.out.println("Edge 1 from "+theState+" to "+target);
 		theState = target;
-		*/
         return "";
     }
-
+    */
 }

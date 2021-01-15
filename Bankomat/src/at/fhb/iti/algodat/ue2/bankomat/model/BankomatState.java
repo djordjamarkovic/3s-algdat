@@ -9,6 +9,6 @@ public enum BankomatState {
 	,ENTER
 	,WAITING
 	,CORRECT
-	,MONEYBOX
+	,CARDSLOT
 	,MONEY
 }
