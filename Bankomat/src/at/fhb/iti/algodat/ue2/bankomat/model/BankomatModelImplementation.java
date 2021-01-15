@@ -170,6 +170,7 @@ public class BankomatModelImplementation implements BankomatModel {
                     target = DIGIT0;
                     theView.setText("Ihr Code ist nicht korrekt. Bitte wiederholen:");
                     System.out.println("Edge 17 from " + theState + " to " + target);
+                    theCode = 0;
                     theState = target;
                     break;
                 }

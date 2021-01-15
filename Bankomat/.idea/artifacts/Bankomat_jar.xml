@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Bankomat_jar</output-path>
     <root id="archive" name="Bankomat.jar">
       <element id="module-output" name="Bankomat" />
+      <element id="module-source" name="Bankomat" />
     </root>
   </artifact>
 </component>
