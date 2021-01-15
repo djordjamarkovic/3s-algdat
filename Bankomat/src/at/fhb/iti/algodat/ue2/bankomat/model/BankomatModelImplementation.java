@@ -182,7 +182,7 @@ public class BankomatModelImplementation implements BankomatModel {
                 break;
             case CORRECT:
                 target = CARDSLOT;
-                theView.setText("Karte rausschieben (3PIEPS). Weiter mit Karte entfernen.");
+                theView.setText("Karte rausschieben (3PIEPS). Weiter mit \"Karte entfernen\".");
                 System.out.println("Edge 25 from " + theState + " to " + target);
 
                 theView.setText("Bitte Ihre Karte entfernen.");
